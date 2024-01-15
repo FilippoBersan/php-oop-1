@@ -1,5 +1,6 @@
 <?php
 class Movie{
+  public $info;
  public  $name;
  public $genre;
  public $release;
@@ -14,9 +15,18 @@ class Movie{
   }
 }
 
+
+function __construct($_info)
+{
+  $this->info = $_info;
+  echo 'Film ';
 }
 
-$harrypotter = new Movie();
+
+}
+
+$harrypotter = new Movie('Film1');
+$harrypotter->info;
 $harrypotter->name = 'Harry Potter';
 $harrypotter->genre = 'Fantasy';
 $harrypotter->release = '2000';
@@ -25,7 +35,7 @@ $harrypotter->setEta(12);
 
 var_dump($harrypotter);
 
-$backtofuture = new Movie();
+$backtofuture = new Movie('Film2');
 $backtofuture->name = 'Back to the Future';
 $backtofuture->genre = 'Sci-Fi';
 $backtofuture->release = '1985';
@@ -34,13 +44,15 @@ $backtofuture->setEta(12);
 
 var_dump($backtofuture);
 
-$thering = new Movie();
+$thering = new Movie('Film3');
 $thering->name = 'The Ring';
 $thering->genre = 'Horror';
 $thering->release= '2002';
 
-var_dump($thering);
 
+var_dump($thering);
+echo $harrypotter->info;
+echo '<br>'; 
 echo 'Name: ';
 echo $harrypotter->name;
 echo '<br>';
